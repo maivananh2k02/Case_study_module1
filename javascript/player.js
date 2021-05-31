@@ -16,15 +16,17 @@ function moveCar(evt) {
         move = "RIGHT";
     }
 }
+
 //sử lý va chạm
 function checkCrash(car, enemy) {
-    if ((enemy.x > car.x && enemy.x < car.x + car.width-7) || (enemy.x < car.x && enemy.x + car.width-7 > car.x)) {
+    if ((enemy.x > car.x && enemy.x < car.x + car.width - 7) || (enemy.x < car.x && enemy.x + car.width - 7 > car.x)) {
         if ((enemy.y > car.y && enemy.y < car.y + car.height) || (enemy.y < car.y && enemy.y + enemy.height > car.y)) {
             return true;// va chạm.
         }
     }
     return false;
 }
+
 //hàm tăng điểm
 function checkWin(car, enemys) {
     for (let i = 0; i < enemys.length; i++) {
@@ -52,11 +54,11 @@ function update() {
             enemys[i].x = Math.random() * 650;
             enemys[i].y = 0;
             point += 1;
-            if (i%5===4){
+            if (i % 5 === 4) {
                 speed++;
                 console.log(speed)
             }
-            if(point>hiscoreval){
+            if (point > hiscoreval) {
                 hiscoreval = point;
                 localStorage.setItem("max", JSON.stringify(hiscoreval));
                 maxPoint.innerHTML = "Max Point: " + hiscoreval;
@@ -75,7 +77,7 @@ function update() {
 
     if (checkWin(car, enemys)) {
         document.getElementById("gameOver").innerHTML = "GAME OVER";
-        document.getElementById("pointEnd").innerHTML = "Point: "+point;
+        document.getElementById("pointEnd").innerHTML = "Point: " + point;
         clearInterval(game);
         document.getElementById("restartGame").innerHTML = `<button class="button" onclick="restart()" style="position: absolute; top:400px; left: 280px; z-index: 1">Restart</button>`
         document.getElementById("maxPoint").style.display = "none";
@@ -83,11 +85,7 @@ function update() {
     }
 }
 
-let myIntervar=-1;
 
-document.getElementById('Even').addEventListener('click',function stopEven() {
-
-})
 
 function restart() {
     location.reload();
@@ -100,11 +98,10 @@ function start() {
 }
 
 let max = localStorage.getItem("max");
-if(max === null){
+if (max === null) {
     hiscoreval = 0;
     localStorage.setItem("max", JSON.stringify(hiscoreval))
-}
-else{
+} else {
     hiscoreval = JSON.parse(max);
 }
 

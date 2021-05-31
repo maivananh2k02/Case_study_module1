@@ -1,0 +1,59 @@
+#myCanvas {
+    position: relative;
+    background-image: url("../image/bgr canvas.jpg");
+    background-size: 700px 600px;
+    background-repeat: no-repeat;
+
+}
+
+#startGame {
+    position: absolute;
+    top:460px;
+    left: 250px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    padding: 15px 32px;
+
+}
+#title{
+    position: absolute;
+    font-size: 45px;
+    color: white;
+    left: 220px;
+    top: 170px;
+    z-index: 1;
+}
+#point{
+    position: absolute;
+    color: white;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+}
+#maxPoint{
+    position: absolute;
+    color: white;
+    left: 20px;
+    top: 35px;
+    z-index: 1;
+}
+#gameOver{
+    position: absolute;
+    font-size: 45px;
+    color: white;
+    left: 190px;
+    top: 170px;
+    z-index: 1;
+}
+#pointEnd{
+    position: absolute;
+    font-size:45px;
+    color: white;
+    left: 240px;
+    top: 255px;
+    z-index: 1;
+}
+

@@ -3,40 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Siêu xe đi phượt</title>
-    <style>
-        #myCanvas {
-            position: relative;
-            background-image: url("image/bgr canvas.jpg");
-            background-size: 700px 600px;
-            background-repeat: no-repeat;
-
-        }
-
-        #startGame {
-            background-color: red;
-            color: white;
-            text-align: center;
-            font-size: 16px;
-            display: block;
-            padding: 15px 32px;
-        }
-    </style>
+    <link rel="stylesheet" href="gameCar_style/style.css">
 
 </head>
 <body>
 <canvas id="myCanvas" width="700px" height="600px"></canvas>
-<p id="title" style="position: absolute;font-size: 45px; color: white;left: 220px;top: 170px;z-index: 1">
+<p id="title" >
     Racing Game</p>
-<p id="point" style="position: absolute;color: white;left: 20px;top: 20px;z-index: 1"></p>
-<p id="maxPoint" style="position: absolute;color: white;left: 20px;top: 35px;z-index: 1"></p>
-<button id="startGame" onclick="start()" style="position: absolute; top:460px; left: 250px;">Start Game</button>
+<p id="point"></p>
+<p id="maxPoint"></p>
+<button id="startGame" onclick="start()" >Start Game</button>
 <p id="restartGame"></p>
-<p id="gameOver" style="position: absolute;font-size: 45px; color: white;left: 190px;top: 170px;z-index: 1"></p>
-<p id="pointEnd" style="position: absolute;font-size:45px;color: white;left: 240px;top: 255px;z-index: 1"></p>
-<button onclick="stopEven()" id="Even">STOP</button>
-<script src="javascript/gameCar.js"></script>
-<script src="javascript/classCar.js"></script>
+<p id="gameOver"></p>
+<p id="pointEnd"></p>
+<script src="javascript/player.js"></script>
+<script src="javascript/Car.js"></script>
 <script src="javascript/enemy.js"></script>
-<script src="javascript/background.js"></script>
+<script src="javascript/road.js"></script>
 </body>
 </html>
