@@ -1,5 +1,7 @@
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
+let sound=document.getElementById('sound');
+let music=document.getElementById('music');
 let point = 0;
 let speed = 10;
 
@@ -8,8 +10,8 @@ let enemys = [];
 document.addEventListener("keydown", moveCar);
 let move;
 
-function moveCar(evt) {
-    let key = evt.keyCode;
+function moveCar(event) {
+    let key = event.keyCode;
     if (key === 37) {
         move = "LEFT";
     } else if (key === 39) {
@@ -79,9 +81,11 @@ function update() {
         document.getElementById("gameOver").innerHTML = "GAME OVER";
         document.getElementById("pointEnd").innerHTML = "Point: " + point;
         clearInterval(game);
-        document.getElementById("restartGame").innerHTML = `<button class="button" onclick="restart()" style="position: absolute; top:400px; left: 280px; z-index: 1">Restart</button>`
+        document.getElementById("restartGame").innerHTML = `<button  onclick="restart()" style="position: absolute; top:400px; left: 280px; z-index: 1">Restart</button>`
         document.getElementById("maxPoint").style.display = "none";
         document.getElementById("point").style.display = "none";
+        sound.pause();
+        music.play();
     }
 }
 
@@ -95,10 +99,12 @@ function start() {
     game = setInterval(update, 100);
     document.getElementById("startGame").style.display = "none";
     document.getElementById("title").style.display = "none";
+    sound.play();
+
 }
 
 let max = localStorage.getItem("max");
-if (max === null) {
+if (max <point) {
     hiscoreval = 0;
     localStorage.setItem("max", JSON.stringify(hiscoreval))
 } else {
