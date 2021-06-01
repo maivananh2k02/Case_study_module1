@@ -1,7 +1,8 @@
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
-let sound=document.getElementById('sound');
-let music=document.getElementById('music');
+let sound = document.getElementById('sound');
+let music = document.getElementById('music');
+let isPlaying = true;
 let point = 0;
 let speed = 10;
 
@@ -70,6 +71,7 @@ function update() {
         }
         document.getElementById("point").innerHTML = "Point: " + point;
         document.getElementById("maxPoint").innerHTML = "Max Point: " + max;
+
     }
     backgroundImg.draw();
 
@@ -90,7 +92,6 @@ function update() {
 }
 
 
-
 function restart() {
     location.reload();
 }
@@ -104,15 +105,9 @@ function start() {
 }
 
 let max = localStorage.getItem("max");
-if (max <point) {
+if (max < point) {
     hiscoreval = 0;
     localStorage.setItem("max", JSON.stringify(hiscoreval))
 } else {
     hiscoreval = JSON.parse(max);
 }
-
-
-
-
-
-
