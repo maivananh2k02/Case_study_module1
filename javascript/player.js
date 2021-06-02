@@ -2,7 +2,6 @@ let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 let sound = document.getElementById('sound');
 let music = document.getElementById('music');
-let isPlaying = true;
 let point = 0;
 let speed = 10;
 
@@ -20,7 +19,7 @@ function moveCar(event) {
     }
 }
 
-//sử lý va chạm
+
 function checkCrash(car, enemy) {
     if ((enemy.x > car.x && enemy.x < car.x + car.width - 7) || (enemy.x < car.x && enemy.x + car.width - 7 > car.x)) {
         if ((enemy.y > car.y && enemy.y < car.y + car.height) || (enemy.y < car.y && enemy.y + enemy.height > car.y)) {
@@ -64,7 +63,7 @@ function update() {
             if (point > hiscoreval) {
                 hiscoreval = point;
                 localStorage.setItem("max", JSON.stringify(hiscoreval));
-                // maxPoint.innerHTML = "Max Point: " + hiscoreval;
+                
             }
         } else {
             enemys[i].y += speed;
