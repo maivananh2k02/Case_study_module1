@@ -64,7 +64,7 @@ function update() {
             if (point > hiscoreval) {
                 hiscoreval = point;
                 localStorage.setItem("max", JSON.stringify(hiscoreval));
-                maxPoint.innerHTML = "Max Point: " + hiscoreval;
+                // maxPoint.innerHTML = "Max Point: " + hiscoreval;
             }
         } else {
             enemys[i].y += speed;
